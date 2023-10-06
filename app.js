@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 
-
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -58,7 +57,6 @@ app.get("/", function(req, res) {
     res.render("list", {listTitle: "Today", newListItems: foundItems});
   }
   }
-
 });
 
 app.get("/:customListName", function(req, res){
@@ -83,8 +81,8 @@ app.get("/:customListName", function(req, res){
     list.save();
     res.redirect("/" + customListName);
   }
-
-}});
+}
+});
 
 
 app.post("/", function(req, res){
